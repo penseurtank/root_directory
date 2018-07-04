@@ -1,0 +1,22 @@
+ # how to install git on ubuntu... and how to access file on git through the linux command
+    # sudo apt-get update
+    # sudo apt-get install git
+
+    # mkdir ubuntu_server
+    # cd ubuntu_server/
+    # git add README.md
+    # echo "# ubuntu_server" >> README.md
+
+    # git init
+    # git add README.md
+    # git commit -m "server test firstcommit"
+    # git commit -m "first commit"
+    # git config --global user.email "ravi.rsinghvaishali@gmail.com"
+    # git commit -m "first commit"
+    # git remote add origin https://github.com/ravi2790/ubuntu_server.git
+    # git push -u origin master
+
+
+# ************** The End *****************
+#*********Author@RaviRanjan***************
+
