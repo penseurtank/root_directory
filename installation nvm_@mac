@@ -1,0 +1,60 @@
+brew update
+brew install nvm
+mkdir ~/.nvm
+nano ~/.bash_profile
+""***
+You should create NVM's working directory if it doesn't exist:
+
+mkdir ~/.nvm
+
+Add the following to ~/.bash_profile or your desired shell
+configuration file:
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+You can set $NVM_DIR to any location, but leaving it unchanged from
+/usr/local/opt/nvm will destroy any nvm-installed Node installations
+upon upgrade/reinstall.
+
+Type `nvm help` for further information.
+""***
+
+In your .bash_profile file (you may be using an other file, according to your shell), add the following :
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+Back to your shell, activate nvm and check it (if you have other shells opened and you want to keep them, do the same) :
+
+source ~/.bash_profile
+echo $NVM_DIR
+
+Now, you can install node :
+
+nvm install 0.12
+
+From now on, you’re using the v0.12.x of node on this shell, you can install your global dependencies such as grunt-cli (they will be tied up to this version of node).
+
+You may want to install other versions, just do :
+
+nvm install 0.10
+nvm install iojs
+
+You’ll have to npm install -g your global dependencies for each version.
+
+Switch of node version with nvm use 0.10 (more infos here).
+
+To have a node activated by default (not to have to nvm use on each new shell), run this (stable being the id of the version):
+
+nvm alias default stable
+or
+nvm alias default <node --version : v8.10.0>
+for changing use...
+nvm use <node --version : v8.10.0>
+for checking list of installed nodes version...
+nvm list
+
+
+========================================= the end ====================================================
